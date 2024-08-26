@@ -65,9 +65,69 @@ function mediaAritmetica(){
   
   mediaAritmetica()
 
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+// Escreva um programa que verifique se um número passado pelo usuário é primo
+
+// Aqui escrevemos a função chamada eprimo
+function ePrimo(numero) {
+
+// Dentro desse if tem uma verificação de que se o número for 0 ou 1 ele irá retornar que o número não é primo, afinal, 0 e 1 não são números primos.
+  if(numero == 0 || numero == 1){
+    return ('Não é um numero primo')
+  }
+
+// Dentro desse for, passamos a variável i que é igual a 2 e um método que recebe a raiz quadrada do número e irá incrementar 1 a cada iteração.
+  for(let i = 2; i <= Math.sqrt(numero); i++){
+// Dentro desse if, ele verifica se a iteração deixará resto, caso ele encontre um divisor, retornará que ele não é um número primo
+    if(numero % i == 0){
+      return('Não é um número primo')
+    }
+  }
+// Se não cair em nenhuma dessas condigões, cairá no return que irá retornar que o número é primo.
+  return('É um número primo')
+}
+
+console.log(ePrimo(4))
+console.log(ePrimo(7))
+console.log(ePrimo(17))
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+// Escreva um programa que conte quantas vezes caracteres especiais como (@, #, $, %) aparecem em uma string fornecida pelo usuário
+
+// Aqui criamos a função, chamada de contarCaracteres
+function contarCaracteres(str){
+  //dentro dessa função criamos um array chamado de char, que recebeu os caracteres especiais
+  const char = ['@', '#', '$', '%']
+  let contador = 0
+  
+  
+  // Dentro desse laço for, passamos uma variável i = 0 e toda vez que i for menor que o comprimento da string ele irá incrementar 1 caso a comparação if em baixo seja verdadeira, no caso: se algum caracter especial que for passado pelo usuário no parâmetro, ele irá verificar dentro do array, se for verdade irá incrementar +1 dentro do contador
+  for(let i = 0; i < str.length; i++){
+      if(char.includes(str[i])){
+      contador++
+   }
+ }
+  return contador
+}
+
+
+// Aqui temos duas variáveis, uma recebe o valor do usuário, no caso o que ele deseja botar, e o outro armazena o valor do usuário dentro de uma variável que está recebendo também a função e adicionando o valor do usuário dentro do parâmetro dela.
+let usuario = prompt('Digite um valor')
+let totalChar = contarCaracteres(usuario)
+
+
+// Aqui nós chamamos o console para imprimir os valores e a função
+console.log(`Total de caracteres especiais(@, #, $, %): ${totalChar}`)
+
 
   /*
    * Legenda:
    * parseFloat: transforma o número passado de string para ponto flutuante
    * console.log(): mostra o que foi passado dentro dos paranteses no console.
+   * Math.sqrt(): irá retornar a raiz quadrada do número colocado
+   * includes(): ele irá verificar se dentro da variável passada existe elementos incluidos dentro da função
    */
