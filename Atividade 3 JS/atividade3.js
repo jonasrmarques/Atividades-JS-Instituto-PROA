@@ -45,10 +45,11 @@ function mediaAritmetica(){
     let prova1 = parseFloat(prompt('Digite sua primeira nota'))
     let prova2 = parseFloat(prompt('Digite sua segunda nota'))
     let prova3 = parseFloat(prompt('Digite sua terceira nota'))
-    let prova4 = parseFloat(prompt('Digite sua quarta nota'))
     // Nessa variável media, será somada as 4 notas dos alunos e dividido por 4 que dará a média aritmetica dos valores passados
+    let prova4 = parseFloat(prompt('Digite sua quarta nota'))
     let media = (prova1 + prova2 + prova3 + prova4) / 4
     
+
     switch(true){
     // Esse switch irá fazer a comparação, onde caso a nota seja maior ou igual a 7 ele irá cair na parte onde foi aprovado, caso a nota seja menor que 7 ou maior ou igual a 5 ela cairá na recuperação e caso seja menor que 5 ele estará reprovado.
       case media >= 7:
@@ -76,7 +77,7 @@ function ePrimo(numero) {
 // Dentro desse if tem uma verificação de que se o número for 0 ou 1 ele irá retornar que o número não é primo, afinal, 0 e 1 não são números primos.
   if(numero == 0 || numero == 1){
     return ('Não é um numero primo')
-  }
+}
 
 // Dentro desse for, passamos a variável i que é igual a 2 e um método que recebe a raiz quadrada do número e irá incrementar 1 a cada iteração.
   for(let i = 2; i <= Math.sqrt(numero); i++){
@@ -122,6 +123,33 @@ let totalChar = contarCaracteres(usuario)
 
 // Aqui nós chamamos o console para imprimir os valores e a função
 console.log(`Total de caracteres especiais(@, #, $, %): ${totalChar}`)
+
+// Faça um código de 1 a 100 e faça que com o usuário tente adivinhar.
+
+
+function adivinhe(){
+  let numero = Math.floor(Math.random() * 101)
+  let verdade = true
+  
+  while(verdade){
+    let usuario = parseInt(prompt('Digite um número'))
+    if(usuario <= 0 || !usuario){
+      alert('Digite um número válido!')
+      
+    } else if(usuario > numero) {
+      alert('O número é menor, tente de novo')
+      
+    } else if(usuario < numero) {
+      alert('O número é maior, tente de novo')
+      
+    }else {
+      verdade = false
+      alert('Parabéns você acertou')
+    }
+  }
+}
+
+adivinhe()
 
 
   /*
