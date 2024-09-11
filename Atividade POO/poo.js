@@ -12,13 +12,10 @@ class Funcionarios{
 
     set alteracaoSalarial(novoSalario) {
         if (novoSalario < this.#salario) {
-            this.#salario = novoSalario
             console.log(`Houve uma diminuição do salário do funcionário para R$${this.#salario}`)
         } else if (novoSalario > this.#salario) {
-            this.#salario = novoSalario
             console.log(`Seu salário com o aumento ficou: R$${this.#salario}`)
         } else {
-            this.#salario = novoSalario
             console.log(`O salário permanece o mesmo: R$${this.#salario}`)
         }
         this.#salario = novoSalario
